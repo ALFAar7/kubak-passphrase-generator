@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1 class="title">Kubak</h1>
+    </div>
+  </header>
+
+  {% block content %}
+  {% endblock %}
+
+  <script>
+    $("input").click(function() {
+      if ($('#gender2').is(":checked")) {
+        $(".gender2").slideDown();
+      } else {
+        $(".gender2").slideUp();
+      }
+      if ($('#gender3').is(":checked")) {
+        $(".gender3").slideDown();
+      } else {
+        $(".gender3").slideUp();
+      }
+    });
+  </script>
+</body>
+
+</html>

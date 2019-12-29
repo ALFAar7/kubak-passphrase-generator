@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main class="container signup-section">
+  <div class="col-xs-12">
+    <h2 class="col-xs-12">Please select your Type:</h2>
+    <form class="form-horizontal" action="/generator" method="POST">
+      <div class="form-group">
+        <div class="col-sm-1">
+          <input class="margin_top_12" type="radio" name="gender" id="gender" value="auto" checked>
+        </div>
+        <label class="control-label col-sm-11 text_left" for="gender">Automatically Generate passphrase:</label>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-1">
+          <input class="margin_top_12" type="radio" name="gender" id="gender2" value="lenght">
+        </div>
+        <label class="control-label col-sm-11 text_left" for="gender2">Select lenght of you'r passphrase:</label>
+      </div>
+      <div class="form-group margin_left_65 gender2">
+        <label class="control-label col-sm-4 text_left margin_top_12" for="lenght">Lenght:</label>
+        <div class="col-sm-2">
+          <input class=" custom_input" type="text" name="lname" id="lenght" value="10">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-1">
+          <input class="margin_top_12" type="radio" name="gender" value="spchar" id="gender3">
+        </div>
+        <label class="control-label col-sm-11 text_left" for="gender3">Enter special character and alphanumerics (recommended):</label>
+      </div>
+      <div class="col-xs-12 padding_x_0 gender3">
+        <div class="form-group margin_left_65">
+          <label class="control-label col-sm-4 text_left margin_top_12" for="Character">Lenght Of Character:</label>
+          <div class="col-sm-2">
+            <input class=" custom_input" type="text" name="olname" id="Character" value="10">
+          </div>
+        </div>
+        <div class="form-group margin_left_65">
+          <label class="control-label col-sm-4 text_left margin_top_12" for="Special">Lenght Of Special Character:</label>
+          <div class="col-sm-2">
+            <input class=" custom_input" type="text" name="osname" id="Special" value="5">
+          </div>
+        </div>
+      </div>
+        <div class="form-group padding_x_15">
+          <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary">Generate</button>
+          </div>
+        </div>
+    </form>
+  </div>
+  <div class="col-xs-12">
+    <h2 class="col-xs-12">Generated Code:</h2>
+    <h4 class="col-xs-12 code_box">{{formvar}}</h4>
+  </div>
+</main>
+{% endblock %}
