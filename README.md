@@ -23,6 +23,8 @@ ENTRYPOINT python3 /projects/routes.py
 
 ## Docker build
 
+for simple use just clone project and run command :
+
 ```
 $ sudo docker build . -t passgen:0.0.1
 $ sudo docker run --name=paasgen -p 7676:7676 passgen:0.0.1
